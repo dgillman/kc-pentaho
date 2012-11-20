@@ -1,0 +1,189 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.rsmart</groupId>
+  <artifactId>kc-reporting</artifactId>
+  <packaging>war</packaging>
+  <version>0,1</version>
+  <name>kc-reporting Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <pentaho.version>3.8.2-GA</pentaho.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>repo.pentaho.org</id>
+      <name>repo.pentaho.org-releases</name>
+      <url>http://repository.pentaho.org/artifactory/pentaho</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+
+  <!-- Webapp dependencies -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.3</version>
+      <scope>provided</scope>
+    </dependency>
+  
+  <!-- Spring dependencies -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>3.1.2.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>3.1.2.RELEASE</version>
+    </dependency>
+
+  <!-- Pentaho dependencies -->
+    <dependency>
+      <groupId>pentaho-reporting-engine</groupId>
+      <artifactId>pentaho-reporting-engine-classic-core</artifactId>
+      <version>${pentaho.version}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-reporting-engine</groupId>
+      <artifactId>pentaho-reporting-engine-wizard-core</artifactId>
+      <version>${pentaho.version}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-reporting-engine</groupId>
+      <artifactId>pentaho-reporting-engine-classic-extensions</artifactId>
+      <version>${pentaho.version}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>libbase</artifactId>
+      <version>1.2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>libdocbundle</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>libfonts</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>libformat</artifactId>
+      <version>1.2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>libformula</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>libloader</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>librepository</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>libserializer</artifactId>
+      <version>1.2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>libxml</artifactId>
+      <version>1.2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library</groupId>
+      <artifactId>libswing</artifactId>
+      <version>1.2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.lowagie</groupId>
+      <artifactId>itext</artifactId>
+      <version>2.1.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.lowagie</groupId>
+      <artifactId>itext-rtf</artifactId>
+      <version>2.1.7</version>
+    </dependency>
+		<dependency>
+		  <groupId>org.beanshell</groupId>
+		  <artifactId>bsh</artifactId>
+		  <version>1.3.0</version>
+		</dependency>
+		<dependency>
+		  <groupId>bsf</groupId>
+		  <artifactId>bsf</artifactId>
+		  <version>2.4.0</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.apache.poi</groupId>
+		  <artifactId>poi</artifactId>
+		  <version>3.6</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.apache.poi</groupId>
+		  <artifactId>poi-ooxml</artifactId>
+		  <version>3.6</version>
+		</dependency>
+                        
+                        
+  <!-- database dependencies -->
+  <dependency>
+	  <groupId>commons-dbcp</groupId>
+	  <artifactId>commons-dbcp</artifactId>
+	  <version>1.4</version>
+	</dependency>
+
+  <!-- Logging dependencies -->
+  <dependency>
+	  <groupId>org.slf4j</groupId>
+	  <artifactId>slf4j-api</artifactId>
+	  <version>1.6.6</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.slf4j</groupId>
+	  <artifactId>slf4j-log4j12</artifactId>
+	  <version>1.6.6</version>
+	</dependency>
+                        
+  <!-- Testing dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>kc-reporting</finalName>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
